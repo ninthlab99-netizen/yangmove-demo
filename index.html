@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<title>楊氏搬家｜網站提案示範</title>
+<meta name="description" content="Ninth 為楊氏搬家製作的網站提案示範，非官方網站。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cobalt:#1E3A9E;
+  --cobalt-deep:#152B78;
+  --ink:#0F1D4A;
+  --strap:#F5C518;
+  --wrap:#EEF2F7;
+  --paper:#FFFFFF;
+  --kraft:#C8955B;
+  --fragile:#D6332A;
+  --muted:#4A5578;
+  --line:#CBD3E3;
+  --road:#2B3140;
+  --sans:"Noto Sans TC",system-ui,sans-serif;
+  --hand:"LXGW WenKai TC","Noto Sans TC",serif;
+  --num:"Barlow Condensed","Noto Sans TC",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);color:var(--ink);background:var(--wrap);
+  font-size:17px;line-height:1.75;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--strap);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+
+/* ---------- demo notice ---------- */
+.demo-bar{
+  background:var(--ink);color:#fff;font-size:13px;line-height:1.5;
+  padding:8px 16px;text-align:center;position:relative;z-index:50;
+}
+.demo-bar strong{color:var(--strap);font-weight:700}
+
+/* ---------- header ---------- */
+.site-head{padding:18px 0}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;font-size:20px;letter-spacing:.04em}
+.brand-mark{width:34px;height:34px;border-radius:8px;background:var(--cobalt);color:#fff;display:grid;place-items:center;font-size:18px}
+.nav{display:flex;gap:26px;font-size:15px;font-weight:500}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--cobalt)}
+.head-call{font-family:var(--num);font-weight:800;font-size:22px;text-decoration:none;color:var(--cobalt);letter-spacing:.02em}
+
+/* ---------- hero: the truck ---------- */
+.hero{padding:28px 0 0;overflow:hidden}
+.hero-intro{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:28px}
+.hero-intro p{max-width:30em;color:var(--muted);font-size:16px}
+.hero-intro .since{font-family:var(--hand);font-size:22px;color:var(--ink);white-space:nowrap}
+
+.stage{position:relative}
+.truck{
+  container-type:inline-size;position:relative;
+  width:min(1040px,100%);margin-inline:auto;
+  display:grid;grid-template-columns:74fr 26fr;align-items:end;
+  padding-bottom:6.5cqi;
+}
+.cargo{
+  position:relative;background:var(--cobalt);
+  border-radius:1.2cqi 1.2cqi .6cqi .6cqi;
+  min-height:36cqi;
+  box-shadow:inset 0 -2.4cqi 0 var(--cobalt-deep), inset 0 0 0 .5cqi rgba(255,255,255,.08);
+  color:#fff;padding:4.6cqi 5cqi 10cqi;gap:3cqi;
+  display:flex;flex-direction:column;justify-content:space-between;
+  overflow:hidden;
+}
+/* ribbed panel lines like a box-truck body */
+.cargo::before{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,transparent 0 calc(12.5% - 1px),rgba(0,0,0,.12) calc(12.5% - 1px) 12.5%);
+  pointer-events:none;
+}
+.cargo > *{position:relative}
+.cargo .name{font-weight:900;font-size:13.2cqi;line-height:1;letter-spacing:.06em;text-shadow:.35cqi .35cqi 0 var(--cobalt-deep)}
+.cargo .motto{font-family:var(--hand);font-weight:700;font-size:3.9cqi;line-height:1.2;color:var(--strap);margin-top:1.4cqi}
+.cargo .plate{display:flex;align-items:flex-end;justify-content:space-between;gap:2cqi}
+.cargo .tel{font-family:var(--num);font-weight:800;font-size:7.4cqi;line-height:.9;letter-spacing:.02em}
+.cargo .tel small{display:block;font-family:var(--sans);font-weight:700;font-size:1.7cqi;letter-spacing:.2em;opacity:.8;margin-bottom:.8cqi}
+.cargo .areas{font-size:1.75cqi;font-weight:700;text-align:right;line-height:1.5;opacity:.92}
+.strap{
+  position:absolute;left:0;right:0;bottom:4.4cqi;height:1.5cqi;
+  background:var(--strap);
+}
+.cab{position:relative;align-self:stretch}
+.cab svg{position:absolute;inset:auto 0 0 0;width:100%;height:auto}
+.wheel{
+  position:absolute;bottom:0;width:11.4cqi;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,#D8DDE8 0 22%,#8C94A6 23% 30%,#1B1F2A 31%);
+  box-shadow:0 0 0 .5cqi #11141C;
+}
+.wheel::after{content:"";position:absolute;inset:32%;border-radius:50%;border:.5cqi dashed #5B6376}
+.wheel.w1{left:9%}.wheel.w2{left:24%}.wheel.w3{left:83%}
+.shadow{position:absolute;left:3%;right:3%;bottom:-.6cqi;height:2cqi;border-radius:50%;background:rgba(15,29,74,.18);filter:blur(4px)}
+
+.road{height:64px;background:var(--road);position:relative;margin-top:-2px}
+.road::after{
+  content:"";position:absolute;left:0;right:0;top:50%;height:4px;margin-top:-2px;
+  background:repeating-linear-gradient(90deg,#E9EDF5 0 48px,transparent 48px 96px);
+  opacity:.8;
+}
+
+@media (prefers-reduced-motion:no-preference){
+  .truck{animation:drive-in 1.6s cubic-bezier(.2,.75,.25,1) .2s both}
+  .wheel::after{animation:spin 1.6s cubic-bezier(.2,.75,.25,1) .2s both}
+  .road::after{animation:road 1.6s cubic-bezier(.2,.75,.25,1) .2s both}
+  @keyframes drive-in{from{transform:translateX(-110%)}to{transform:none}}
+  @keyframes spin{from{transform:rotate(-1080deg)}to{transform:none}}
+  @keyframes road{from{background-position:-480px 0}to{background-position:0 0}}
+}
+
+.hero-cta{background:var(--road);padding:8px 0 44px}
+.hero-cta .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 26px;
+  border-radius:999px;font-weight:700;font-size:17px;text-decoration:none;border:0;cursor:pointer;
+}
+.btn-line{background:#06C755;color:#fff}
+.btn-call{background:var(--strap);color:var(--ink)}
+.btn svg{width:22px;height:22px}
+.hero-cta p{color:#B7C0D6;font-size:14px;margin-left:6px}
+
+/* ---------- shared section ---------- */
+section{padding:96px 0}
+.sec-title{font-weight:900;font-size:clamp(28px,4.4vw,42px);line-height:1.25;letter-spacing:.02em}
+.sec-lead{color:var(--muted);max-width:34em;margin-top:14px}
+
+/* ---------- services: cargo manifest ---------- */
+.services{background:var(--paper)}
+.svc-grid{
+  margin-top:48px;display:grid;grid-template-columns:repeat(12,1fr);gap:20px;
+}
+.svc{
+  position:relative;padding:28px 28px 30px;border:2px solid var(--ink);border-radius:6px;background:var(--paper);
+}
+.svc h3{font-size:22px;font-weight:900;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:16px}
+.svc .tag{display:inline-block;font-size:13px;font-weight:700;padding:2px 10px;border-radius:4px;background:var(--wrap);color:var(--cobalt);margin-bottom:14px}
+.svc.big{grid-column:span 7;background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+.svc.big p{color:#D5DCF2}
+.svc.big .tag{background:var(--strap);color:var(--ink)}
+.svc.side{grid-column:span 5}
+.svc.third{grid-column:span 4}
+.stamp{
+  position:absolute;top:18px;right:18px;transform:rotate(8deg);
+  border:3px solid var(--fragile);color:var(--fragile);border-radius:6px;
+  padding:2px 10px;font-weight:900;font-size:15px;letter-spacing:.1em;background:var(--paper);
+}
+.svc.big .fish{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.svc.big .fish span{font-size:14px;padding:4px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.35)}
+
+/* ---------- process (real sequence) ---------- */
+.process{background:var(--wrap)}
+.steps{margin-top:56px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:s;position:relative}
+.steps::before{content:"";position:absolute;left:28px;right:28px;top:27px;height:4px;background:repeating-linear-gradient(90deg,var(--kraft) 0 14px,transparent 14px 22px)}
+.step{position:relative;padding-right:18px;list-style:none}
+.step .n{
+  width:58px;height:58px;border-radius:50%;background:var(--ink);color:#fff;
+  display:grid;place-items:center;font-family:var(--num);font-weight:800;font-size:28px;position:relative;
+  box-shadow:0 0 0 6px var(--wrap);
+}
+.step:last-child .n{background:var(--strap);color:var(--ink)}
+.step h3{font-size:19px;font-weight:900;margin:18px 0 6px}
+.step p{font-size:15px;color:var(--muted)}
+
+/* ---------- jobs from their posts ---------- */
+.jobs{background:var(--paper)}
+.job-list{margin-top:48px;border-top:2px solid var(--ink)}
+.job{display:grid;grid-template-columns:180px 1fr 1.1fr;gap:28px;padding:34px 0;border-bottom:1px solid var(--line);align-items:start}
+.job .where{font-weight:900;font-size:20px}
+.job .where span{display:block;font-weight:500;font-size:14px;color:var(--muted);margin-top:2px}
+.job h3{font-size:20px;font-weight:700;line-height:1.5}
+.job blockquote{font-family:var(--hand);font-size:19px;line-height:1.8;color:var(--ink);border-left:4px solid var(--strap);padding-left:18px}
+
+/* ---------- area: route board ---------- */
+.area{background:var(--cobalt);color:#fff}
+.area .sec-lead{color:#C9D2EE}
+.route{margin-top:48px;display:flex;flex-wrap:wrap;gap:12px}
+.route li{list-style:none;padding:10px 20px;border-radius:6px;border:2px solid #fff;font-weight:700;font-size:18px}
+.route li.home{background:var(--strap);color:var(--ink);border-color:var(--strap)}
+.route li.far{border-style:dashed;opacity:.85}
+.area-note{margin-top:22px;font-size:15px;color:#C9D2EE}
+
+/* ---------- faq ---------- */
+.faq{background:var(--wrap)}
+.faq-list{margin-top:40px;max-width:760px}
+.faq details{border-bottom:1px solid var(--line);padding:6px 0}
+.faq summary{cursor:pointer;list-style:none;font-weight:700;font-size:18px;padding:16px 36px 16px 0;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:10px;font-size:28px;font-weight:400;color:var(--cobalt);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);padding:0 0 18px;max-width:40em}
+
+/* ---------- final call ---------- */
+.final{background:var(--ink);color:#fff;text-align:center}
+.final .motto{font-family:var(--hand);font-size:clamp(34px,6vw,64px);font-weight:700;line-height:1.3;color:var(--strap)}
+.final p{color:#B7C0D6;margin:18px auto 32px;max-width:28em}
+.final .btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.final .bignum{display:block;font-family:var(--num);font-weight:800;font-size:clamp(44px,9vw,88px);line-height:1;margin-top:40px;text-decoration:none;letter-spacing:.02em}
+
+footer{background:#0A1436;color:#8F9BBE;font-size:14px;padding:32px 0 110px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:var(--strap)}
+
+/* ---------- mobile sticky bar ---------- */
+.dock{
+  position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;gap:10px;
+}
+.dock .btn{flex:1;justify-content:center;min-height:52px;padding:0 12px;box-shadow:0 6px 20px rgba(15,29,74,.35)}
+
+/* ---------- watermark ---------- */
+#wm{
+  position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background-repeat:repeat;opacity:1;
+}
+
+@media (max-width:900px){
+  .nav{display:none}
+  .svc.big,.svc.side,.svc.third{grid-column:span 12}
+  .steps{grid-template-columns:1fr;gap:28px}
+  .steps::before{left:27px;right:auto;top:28px;bottom:28px;width:4px;height:auto;background:repeating-linear-gradient(180deg,var(--kraft) 0 14px,transparent 14px 22px)}
+  .step{display:grid;grid-template-columns:58px 1fr;column-gap:18px;padding:0}
+  .step h3{margin:4px 0 4px}
+  .step p{grid-column:2}
+  .job{grid-template-columns:1fr;gap:12px}
+  .hero-intro{flex-direction:column;align-items:flex-start;gap:8px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  section{padding:68px 0}
+  .head-call{display:none}
+  .dock{display:flex}
+  .hero-cta .btn{flex:1 1 100%;justify-content:center}
+  .cargo .areas{display:none}
+  .road{height:44px}
+}
+@media print{body{display:none}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" role="note">
+  這是 <strong>Ninth 九號</strong> 為楊氏搬家製作的網站提案示範，並非楊氏搬家官方網站。
+</div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="brand-mark">楊</span>楊氏搬家</a>
+    <nav class="nav" aria-label="主選單">
+      <a href="#services">服務項目</a>
+      <a href="#process">搬家流程</a>
+      <a href="#jobs">搬運實錄</a>
+      <a href="#area">服務地區</a>
+      <a href="#faq">常見問題</a>
+    </nav>
+    <a class="head-call" href="tel:0926100150">0926-100-150</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-name">
+    <div class="wrap hero-intro">
+      <p>土城出發，跑遍雙北。套房、整層住家、公司工廠，大型魚缸和玻璃家具也搬。先到府看過再報價，價格講清楚才開工。</p>
+      <span class="since">近十年，一車一車搬出來的口碑</span>
+    </div>
+
+    <div class="stage">
+      <div class="wrap">
+        <div class="truck" role="img" aria-label="楊氏搬家的藍色搬家貨車，車身寫著搬的是家，送的是心，電話 0926-100-150">
+          <div class="cargo">
+            <div>
+              <div class="name" id="hero-name">楊氏搬家</div>
+              <div class="motto">搬的是家，送的是心</div>
+            </div>
+            <div class="plate">
+              <div class="tel"><small>免費到府估價</small>0926-100-150</div>
+              <div class="areas">土城・板橋・新莊<br>中和・永和・台北<br>桃園・新竹</div>
+            </div>
+            <div class="strap"></div>
+          </div>
+          <div class="cab" aria-hidden="true">
+            <svg viewBox="0 0 260 300" preserveAspectRatio="xMidYMax meet">
+              <path d="M6 300 V70 Q6 52 24 52 H150 Q172 52 184 70 L246 170 Q254 182 254 198 V286 Q254 300 240 300 Z" fill="#F5C518"/>
+              <path d="M40 80 H146 Q158 80 166 92 L214 170 H40 Z" fill="#BFD4F2"/>
+              <path d="M40 80 H146 Q158 80 166 92 L180 115 H40 Z" fill="#fff" opacity=".45"/>
+              <rect x="40" y="196" width="90" height="10" rx="5" fill="#0F1D4A" opacity=".35"/>
+              <rect x="226" y="208" width="28" height="22" rx="4" fill="#fff"/>
+              <rect x="6" y="262" width="248" height="38" fill="#0F1D4A" opacity=".18"/>
+              <text x="44" y="252" font-family="Noto Sans TC, sans-serif" font-weight="900" font-size="30" fill="#0F1D4A">楊氏</text>
+            </svg>
+          </div>
+          <span class="wheel w1"></span><span class="wheel w2"></span><span class="wheel w3"></span>
+          <span class="shadow"></span>
+        </div>
+      </div>
+      <div class="road" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero-cta">
+      <div class="wrap">
+        <a class="btn btn-line" href="https://lin.ee/wAzhz7Y" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8.1-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>
+          加 LINE 傳照片報價
+        </a>
+        <a class="btn btn-call" href="tel:0926100150">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          打電話約估價
+        </a>
+        <p>LINE ID：@yang666</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services" aria-labelledby="svc-title">
+    <div class="wrap">
+      <h2 class="sec-title" id="svc-title">從一間套房到一整座工廠</h2>
+      <p class="sec-lead">東西多或少、樓層高或低都可以接。每件家具先包膜再上車，送到新家後幫您定位擺好。</p>
+
+      <div class="svc-grid">
+        <article class="svc big">
+          <span class="tag">楊氏的拿手項目</span>
+          <h3>大型魚缸、玻璃家具專業搬運</h3>
+          <p>魚缸是風險最高的搬運項目之一。我們先到現場評估，針對缸體、底櫃結構和玻璃受力點做完整保護，規劃好搬運動線，上車後固定再出發。</p>
+          <div class="fish"><span>大型魚缸</span><span>玻璃桌面</span><span>精緻沙發</span><span>大型家具</span></div>
+          <span class="stamp">易碎</span>
+        </article>
+        <article class="svc side">
+          <span class="tag">學生・小家庭</span>
+          <h3>套房搬遷</h3>
+          <p>一個人的家也值得好好搬。從打包到搬運一次處理，當天就能在新家睡覺。</p>
+        </article>
+        <article class="svc third">
+          <span class="tag">整層住家</span>
+          <h3>家庭搬家</h3>
+          <p>大型家具、家電、雜物一起搬，家具包膜保護，到新家定位擺放。</p>
+        </article>
+        <article class="svc third">
+          <span class="tag">上班族不停工</span>
+          <h3>公司、工廠遷移</h3>
+          <p>辦公桌椅、設備、檔案一起規劃，配合您的時間安排搬遷。</p>
+        </article>
+        <article class="svc third">
+          <span class="tag">沒有電梯也不怕</span>
+          <h3>樓梯搬運</h3>
+          <p>老公寓沒電梯、樓梯轉角窄，師傅一步一步抬，家具和牆面都不碰撞。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process" aria-labelledby="proc-title">
+    <div class="wrap">
+      <h2 class="sec-title" id="proc-title">搬家前，您只要做一件事：加 LINE</h2>
+      <p class="sec-lead">剩下的交給我們。價格在搬之前就講清楚，不會搬到一半才加價。</p>
+      <ol class="steps">
+        <li class="step"><span class="n">1</span><h3>加 LINE 詢問</h3><p>傳幾張家具照片、告訴我們搬出和搬入地址。</p></li>
+        <li class="step"><span class="n">2</span><h3>免費到府估價</h3><p>東西多或有特殊物品，師傅直接到現場看。</p></li>
+        <li class="step"><span class="n">3</span><h3>確認報價與日期</h3><p>價格、車數、人力講清楚，您同意才排車。</p></li>
+        <li class="step"><span class="n">4</span><h3>包膜保護搬運</h3><p>家具包膜、易碎品加強防護，穩穩上車。</p></li>
+        <li class="step"><span class="n">5</span><h3>新家定位擺放</h3><p>照您想要的位置放好，檢查沒問題才收工。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="jobs" id="jobs" aria-labelledby="jobs-title">
+    <div class="wrap">
+      <h2 class="sec-title" id="jobs-title">最近搬過的家</h2>
+      <p class="sec-lead">每一趟工作，我們都會記錄下來。</p>
+      <div class="job-list">
+        <article class="job">
+          <div class="where">新竹<span>老客戶回頭委託</span></div>
+          <h3>大型家具、玻璃桌面、精緻沙發，樓梯搬運加定位擺放</h3>
+          <blockquote>老客戶願意再次找我們，就是對我們最大的肯定。</blockquote>
+        </article>
+        <article class="job">
+          <div class="where">特殊搬運<span>大型魚缸</span></div>
+          <h3>現場評估、包裝防護、動線規劃，到上車固定與安全運送</h3>
+          <blockquote>每一個環節都不能有任何疏忽。</blockquote>
+        </article>
+        <article class="job">
+          <div class="where">土城<span>朋友推薦</span></div>
+          <h3>整間套房搬遷，從包裝到搬運全程順利，物品安全送達新居</h3>
+          <blockquote>搬家不只是移動，更是生活的轉場。</blockquote>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="area" id="area" aria-labelledby="area-title">
+    <div class="wrap">
+      <h2 class="sec-title" id="area-title">從土城出發，雙北都到得了</h2>
+      <p class="sec-lead">新北、台北是我們的主場，桃園、新竹也常常跑。不在列表上的地區，歡迎直接問。</p>
+      <ul class="route">
+        <li class="home">土城</li>
+        <li>板橋</li><li>新莊</li><li>中和</li><li>永和</li><li>三峽</li><li>樹林</li><li>汐止</li><li>台北市</li>
+        <li class="far">桃園</li><li class="far">新竹</li>
+      </ul>
+      <p class="area-note">虛線框為跨縣市服務，可依距離另外報價。</p>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <h2 class="sec-title" id="faq-title">搬家前常被問的事</h2>
+      <div class="faq-list">
+        <details><summary>估價要收錢嗎？</summary><p>不用。可以先在 LINE 傳照片初步報價，東西比較多或有魚缸等特殊物品，我們會免費到府估價。</p></details>
+        <details><summary>搬到一半會加價嗎？</summary><p>報價前會先確認物品數量、樓層、有沒有電梯和車子能停的位置，雙方確認後才排車，不會現場臨時加價。</p></details>
+        <details><summary>家具會不會刮傷？</summary><p>大型家具和玻璃製品都會先包膜保護，易碎品另外加強防護，上車後固定再出發。</p></details>
+        <details><summary>沒有電梯可以搬嗎？</summary><p>可以。樓梯搬運是我們常做的工作，師傅會規劃動線、一步一步抬，避免碰撞牆面和家具。</p></details>
+        <details><summary>要多久前預約？</summary><p>建議提早一到兩週，月底、週末和好日子比較搶手。臨時要搬也可以先傳 LINE 問看看。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="final-title">
+    <div class="wrap">
+      <h2 class="motto" id="final-title">搬的是家，送的是心</h2>
+      <p>傳幾張照片給我們，今天就能知道搬家要多少錢。</p>
+      <div class="btns">
+        <a class="btn btn-line" href="https://lin.ee/wAzhz7Y" target="_blank" rel="noopener">加 LINE 傳照片報價</a>
+        <a class="btn btn-call" href="tel:0926100150">打電話約估價</a>
+      </div>
+      <a class="bignum" href="tel:0926100150">0926-100-150</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>楊氏搬家　服務專線 0926-100-150　LINE @yang666</span>
+    <span>網站提案示範，由 <a href="https://ninthlab.com.tw/" target="_blank" rel="noopener">Ninth 九號</a> 設計製作，未經授權請勿轉載使用</span>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="btn btn-line" href="https://lin.ee/wAzhz7Y" target="_blank" rel="noopener">加 LINE 報價</a>
+  <a class="btn btn-call" href="tel:0926100150">打電話</a>
+</div>
+
+<div id="wm" aria-hidden="true"></div>
+
+<script>
+(function(){
+  "use strict";
+  var WM_TEXT = "DEMO 示範網站｜Ninth 九號製作｜未經授權禁止使用";
+
+  // ---- 浮水印：用 canvas 畫成背景圖，蓋在整頁最上層 ----
+  function makeTile(){
+    var c = document.createElement("canvas"), dpr = window.devicePixelRatio || 1;
+    var w = 420, h = 260;
+    c.width = w * dpr; c.height = h * dpr;
+    var g = c.getContext("2d");
+    g.scale(dpr, dpr);
+    g.translate(w / 2, h / 2);
+    g.rotate(-24 * Math.PI / 180);
+    g.textAlign = "center";
+    g.font = "900 22px 'Noto Sans TC', sans-serif";
+    g.fillStyle = "rgba(15,29,74,0.10)";
+    g.fillText("DEMO 示範網站", 0, -6);
+    g.font = "500 13px 'Noto Sans TC', sans-serif";
+    g.fillStyle = "rgba(15,29,74,0.10)";
+    g.fillText("Ninth 九號製作｜未經授權禁止使用", 0, 18);
+    return c.toDataURL("image/png");
+  }
+  var tile = "";
+  function paint(){
+    var el = document.getElementById("wm");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "wm";
+      el.setAttribute("aria-hidden", "true");
+      document.body.appendChild(el);
+    }
+    var s = "position:fixed;inset:0;z-index:2147483647;pointer-events:none;display:block;opacity:1;visibility:visible;background-repeat:repeat;background-image:url(" + tile + ")";
+    if (el.getAttribute("style") !== s) el.setAttribute("style", s);
+  }
+  function init(){ tile = makeTile(); paint(); }
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(init); } else { init(); }
+  init();
+
+  // 浮水印被刪掉或改樣式，就自動補回來
+  new MutationObserver(function(){ if (tile) paint(); })
+    .observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class", "id"] });
+  setInterval(function(){ if (tile) paint(); }, 1500);
+
+  // ---- 防盜用：擋右鍵、選取、拖曳圖片、常見快捷鍵 ----
+  ["contextmenu", "selectstart", "dragstart", "copy", "cut"].forEach(function(ev){
+    document.addEventListener(ev, function(e){ e.preventDefault(); });
+  });
+  document.addEventListener("keydown", function(e){
+    var k = (e.key || "").toLowerCase(), mod = e.ctrlKey || e.metaKey;
+    if (k === "f12" ||
+        (mod && ["s", "u", "p", "c", "a"].indexOf(k) > -1) ||
+        (mod && e.shiftKey && ["i", "j", "c"].indexOf(k) > -1) ||
+        (e.metaKey && e.altKey && ["i", "j", "u"].indexOf(k) > -1)) {
+      e.preventDefault();
+    }
+  });
+
+  // ---- 網域鎖：被整包複製到其他網址時，頁面只顯示版權聲明 ----
+  var h = location.hostname, p = location.pathname;
+  var ok = h === "" || h === "localhost" || h === "127.0.0.1" ||
+           (h === "ninthlab99-netizen.github.io" && p.indexOf("/yangmove-demo") === 0);
+  if (!ok) {
+    document.documentElement.innerHTML =
+      '<body style="font-family:sans-serif;display:grid;place-items:center;min-height:100vh;margin:0;background:#0F1D4A;color:#fff;text-align:center;padding:24px">' +
+      '<div><h1 style="font-size:24px">此頁面為 Ninth 九號的網站提案示範</h1>' +
+      '<p style="opacity:.8">未經授權不得轉載或使用。如需製作網站，請洽 ninthlab.com.tw</p></div></body>';
+  }
+
+  console.log("%c此網站為 Ninth 九號製作的提案示範，版權所有，未經授權禁止複製使用。", "font-size:14px;color:#D6332A;font-weight:bold");
+})();
+</script>
+</body>
+</html>
